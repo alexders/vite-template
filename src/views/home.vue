@@ -4,7 +4,7 @@
 
 <template>
   <div id="app">
-   home页面
+   vite页面
   </div>
 </template>
 
