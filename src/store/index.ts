@@ -1,32 +1,22 @@
-import { createStore } from 'vuex'
+import {defineStore, createPinia} from 'pinia'
+//持久化插件
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+export const store =defineStore({
+     // id: 必须的，在所有 Store 中唯一
+     id:'globalState',
+       // state: 返回对象的函数
+    state: ()=>({
 
-const defaultState={
-    count:0
-}
-export default createStore({
-    state(){
-        return defaultState
+    }),
+    getters: {},
+    actions:{},
+    persist: {
+        // 本地存储的名称
+        key: "globalState",
+        //保存的位置
+        storage: window.sessionStorage,//localstorage
     },
-    mutations:{
-        increment(state:typeof defaultState){
-            state.count++;
-        },
-        logout(state){
-        }
-    },
-    actions:{
-        increment(context){
-          context.commit('increment')
-        },
-        logout({commit}){
-            commit('logout')
-        }
-
-    },
-    getters:{
-        double(state:typeof defaultState){
-            return 2*state.count
-        }
-    }
-
 })
+const pinia =createPinia();
+pinia.use(piniaPluginPersistedstate);
+export default pinia
