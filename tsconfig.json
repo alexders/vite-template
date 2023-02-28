@@ -10,6 +10,7 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
+    // 跳过库检查，解决打包失败
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": "./",

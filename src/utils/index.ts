@@ -283,20 +283,20 @@ export function debounce(func, wait, immediate) {
  * @param {Object} source
  * @returns {Object}
  */
-export function deepClone(source) {
-  if (!source && typeof source !== 'object') {
-    throw new Error('error arguments', 'deepClone')
-  }
-  const targetObj = source.constructor === Array ? [] : {}
-  Object.keys(source).forEach((keys) => {
-    if (source[keys] && typeof source[keys] === 'object') {
-      targetObj[keys] = deepClone(source[keys])
-    } else {
-      targetObj[keys] = source[keys]
-    }
-  })
-  return targetObj
-}
+// export function deepClone(source) {
+//   if (!source && typeof source !== 'object') {
+//     throw new Error('error arguments', 'deepClone')
+//   }
+//   const targetObj = source.constructor === Array ? [] : {}
+//   Object.keys(source).forEach((keys) => {
+//     if (source[keys] && typeof source[keys] === 'object') {
+//       targetObj[keys] = deepClone(source[keys])
+//     } else {
+//       targetObj[keys] = source[keys]
+//     }
+//   })
+//   return targetObj
+// }
 
 /**
  * @param {Array} arr
@@ -309,11 +309,11 @@ export function uniqueArr(arr) {
 /**
  * @returns {string}
  */
-export function createUniqueString() {
-  const timestamp = +new Date() + ''
-  const randomNum = parseInt((1 + Math.random()) * 65536) + ''
-  return (+(randomNum + timestamp)).toString(32)
-}
+// export function createUniqueString() {
+//   const timestamp = +new Date() + ''
+//   const randomNum = parseInt((1 + Math.random()) * 65536) + ''
+//   return (+(randomNum + timestamp)).toString(32)
+// }
 
 /**
  * Check if an element has a class
@@ -346,15 +346,15 @@ export function removeClass(ele, cls) {
   }
 }
 
-export function getColor() {
-  var str = '#'
-  var arr = ['1', '2', '3', '4', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
-  for (var i = 0; i < 6; i++) {
-    var num = parseInt(Math.random() * 16)
-    str += arr[num]
-  }
-  return str
-}
+// export function getColor() {
+//   var str = '#'
+//   var arr = ['1', '2', '3', '4', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+//   for (var i = 0; i < 6; i++) {
+//     var num = parseInt(Math.random() * 16)
+//     str += arr[num]
+//   }
+//   return str
+// }
 // 检查给定的值是否是数组
 export const isArray = function (value) {
   return objToString.call(value) === '[object Array]'
