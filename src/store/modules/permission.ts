@@ -25,7 +25,11 @@ export const userPermissionStore=defineStore({
     actions:{
         // 生成路由
         generateRoutes(roles){
-            return new Promise((resolve, reject) => {
+            interface backResult{
+               Array: [],
+            }
+            let p: Promise<backResult>=
+             new Promise((resolve, reject) => {
                 // 在这判断是否有权限，哪些角色拥有哪些权限
                 let accessedRoutes
                 if (roles&&roles.length&&!roles.includes('admin')) {
@@ -43,6 +47,7 @@ export const userPermissionStore=defineStore({
                 this.addRoutes=accessedRoutes
                 resolve(accessedRoutes)
             })
+            return p
         },
         // 清楚路由
         clearRoutes(){
