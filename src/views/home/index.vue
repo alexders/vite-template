@@ -2,12 +2,10 @@
   <div>首页</div>
 </template>
 
-<script>
-export default {
+<script lang="ts" setup>
 
-}
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
