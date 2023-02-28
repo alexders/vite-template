@@ -3,11 +3,11 @@
     <div class="login-box">
       <!-- <SwitchDark class="login-dark"/> -->
       <div class="login-left">
-        <img src="@/assets copy/image/login/side-logo.png" >
+        <img src="@/assets/image/login/side-logo.png" >
       </div>
       <div class="login-form">
         <div class="info-qrcode" >{{ accountLogin?'扫码登录':'账号登录' }}</div>
-        <img src="@/assets copy/image/login/qrcode-icon.png" class="qrcode" @click="handleClick">
+        <img src="@/assets/image/login/qrcode-icon.png" class="qrcode" @click="handleClick">
 
         <!-- <LoginForm v-if="accountLogin"/>
         <LoginQrcode v-else/> -->
