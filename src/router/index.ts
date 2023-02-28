@@ -1,6 +1,6 @@
 // 路由文件
 import {createRouter,createWebHashHistory,RouteRecordRaw} from 'vue-router'
-
+import Layout from "@/layout/index.vue";
 // 扩展继承属性
 interface extendRoute {
     hidden?:boolean
@@ -68,7 +68,8 @@ export const constantRoutes: Array<RouteRecordRaw&extendRoute> = [
   },
   {
     path: '/',
-    name: 'home',
+    name: 'layout',
+    component: Layout,
     redirect: '/home',
     children: [
       {
