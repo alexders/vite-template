@@ -1,1 +1,0 @@
-import{_ as e}from"./_plugin-vue_export-helper-c27b6911.js";import{o as _,c as o}from"./index-8417bbcd.js";const t={},c={id:"app"};function s(n,r){return _(),o("div",c," vite页面 ")}const p=e(t,[["render",s],["__scopeId","data-v-641b4574"]]);export{p as default};
