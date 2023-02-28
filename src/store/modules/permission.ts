@@ -25,10 +25,7 @@ export const userPermissionStore=defineStore({
     actions:{
         // 生成路由
         generateRoutes(roles){
-            interface backResult{
-               Array: [],
-            }
-            let p: Promise<backResult>=
+            let p: Promise<[]>=
              new Promise((resolve, reject) => {
                 // 在这判断是否有权限，哪些角色拥有哪些权限
                 let accessedRoutes
@@ -37,7 +34,6 @@ export const userPermissionStore=defineStore({
                 }else{
                     /*
                         只要“||”前面为false,不管“||”后面是true还是false，都返回“||”后面的值。
-
                         只要“||”前面为true,不管“||”后面是true还是false，都返回“||”前面的值。
                     */ 
                     accessedRoutes = asyncRoutes || []
