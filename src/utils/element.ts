@@ -5,7 +5,7 @@ import {
 let loading = null
 
 export const openLoading = (options={})=>{
-    const text = options.text||'加载中'
+    const text = options['text']||'加载中'
     loading = ElLoading.service({
         lock: true,
         text: text,
