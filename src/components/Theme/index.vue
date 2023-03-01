@@ -3,11 +3,11 @@
     <div class="m-setting-fix">
       <div class="item">
         <div class="item-child" @click="operator(1)">
-          <el-icon size="30" color="#3698fd" style="margin-bottom: 8px"></el-icon>
+          <el-icon size="30" color="#3698fd" style="margin-bottom: 8px"><brush /></el-icon>
           主题配置
         </div>
         <div class="item-child item-child2" @click="operator(2)">
-          <el-icon size="30" color="#3698fd" style="margin-bottom: 8px"></el-icon>
+          <el-icon size="30" color="#3698fd" style="margin-bottom: 8px"><Link /></el-icon>
           源码拷贝
         </div>
       </div>
@@ -32,7 +32,7 @@
       </div>
       <div class="theme-item">
         <label>暗黑模式</label>
-        <switch-dark></switch-dark>
+        <SwitchDark></SwitchDark>
       </div>
       <div class="theme-item">
         <label>灰色模式</label>

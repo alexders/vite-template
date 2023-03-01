@@ -28,10 +28,10 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, reactive } from 'vue'
+  import { ref, reactive } from 'vue' 
   import type { ElForm } from 'element-plus'
-  const dialogVisible = ref(false)
   import {userStore} from "@/store/modules/user"
+  const dialogVisible = ref(false)
   const UserStore = userStore()
   const show = () => {
     dialogVisible.value = true

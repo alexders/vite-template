@@ -2,8 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index'
 import pinia from './store/index'
+import {registerElIcons} from "@/plugins/ElIcons"
 // 权限路由
 import './permission.ts'
+import 'virtual:svg-icons-register'
+import SvgIcon from '@/components/SvgIcon/index.vue'// svg component
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import "@/styles/index.scss";
@@ -15,6 +18,9 @@ import "@/styles/element-dark.scss"
 import "@/assets/iconfont/iconfont.css";
 import "@/assets/iconfont/iconfont.js";
 const app =createApp(App)
+registerElIcons(app)
+
+app.component('svg-icon',SvgIcon)
 app.use(router)
 app.use(pinia)
 app.use(ElementPlus)

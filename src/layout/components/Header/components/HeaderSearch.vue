@@ -30,13 +30,13 @@ import path from 'path-browserify'
 import Fuse from 'fuse.js'
 import { useVueFuse } from 'vue-fuse'
 import {useRouter} from "vue-router";
+import {userPermissionStore} from "@/store/modules/permission"
 const router = useRouter()
 const isShowSearch = ref(false);
 const options = ref([]);
 const searchPool = ref([]);
 const search = ref('');
 const fuse = ref(null);
-import {userPermissionStore} from "@/store/modules/permission"
 const PermissionStore = userPermissionStore()
 const routes = computed(() => PermissionStore.routes)
 

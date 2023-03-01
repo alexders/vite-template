@@ -25,15 +25,15 @@
       </el-tabs>
     </div>
     <div class="right-btn">
-      <MoreButton/>
+      <MoreButton></MoreButton>
     </div>
   </div>
 </template>
-<script lang="ts" setup>
+<script  setup lang="ts" >
 import {computed, watch, ref, onMounted} from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { TabsPaneContext } from "element-plus";
-import MoreButton from './components/MoreButton.vue'
+import { TabsPaneContext } from "element-plus"; 
+import MoreButton from './components/MoreButton.vue'  
 import path from 'path-browserify'
 import {useTagsViewStore} from "@/store/modules/tagsView"
 import {userPermissionStore} from "@/store/modules/permission"
@@ -158,10 +158,10 @@ const removeTab = async (activeTabPath: string) => {
       border: none;
       color: #cccccc;
     }
-    .el-tabs__header .el-tabs__item.is-active {
-      // color: $primaryColor;
-      // border-bottom:2px solid $primaryColor;
-    }
+    // .el-tabs__header .el-tabs__item.is-active {
+    //   // color: $primaryColor;
+    //   // border-bottom:2px solid $primaryColor;
+    // }
   }
 }
 </style>

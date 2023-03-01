@@ -1,13 +1,38 @@
-import { defineConfig } from 'vite'
+import { defineConfig, ConfigEnv, UserConfig,} from 'vite'
 import vue from '@vitejs/plugin-vue'
-import {resolve} from 'path'
+import path from 'path'
+// vite.config.ts中无法使用import.meta.env 所以需要引入
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+// 增加 vue文件 script name值
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+// 生产gz文件
+import viteCompression from 'vite-plugin-compression'
+
+
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
+export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
+  return{
+  plugins: [vue(),
+     vueSetupExtend(),
+     createSvgIconsPlugin({
+        // 指定需要缓存的图标文件夹
+        iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
+        // 指定symbolId格式
+        symbolId: 'icon-[dir]-[name]',
+      }),
+      // gzip压缩 生产环境生成 .gz 文件
+      mode==='production'&&viteCompression({
+         verbose: true,
+         disable: false,
+         threshold: 10240,
+         algorithm: 'gzip',
+         ext: '.gz',
+       }),
+  ],
   resolve:{
     // 别名
     alias:{
-      '@':resolve(__dirname,'src') //设置 `@` 指向 `src` 目录
+      '@':path.resolve(__dirname,'src') //设置 `@` 指向 `src` 目录
     }
   },
   //打包路径
@@ -28,4 +53,5 @@ export default defineConfig({
       }
     },
   }
+}
 })
