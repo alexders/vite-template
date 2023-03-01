@@ -10,7 +10,7 @@ export const userStore=defineStore({
        // 登录token
        token:null,
        // 登录用户信息
-       userInfo:{},
+       userInfo:{ },
        // 角色
        roles:localStorage.roles?JSON.parse(localStorage.roles):[]
     }),

@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-  import { isExternal } from '@/utils/validate.ts'
+  import { isExternal } from '@/utils/validate'
 
   export default {
     props: {

@@ -38,14 +38,14 @@ import TagsView from '../../components/TagsView/index.vue'
 import SubItem from '../../components/SubMenu/SubItem.vue'
 import { useRoute } from 'vue-router'
 import {userPermissionStore} from "@/store/modules/permission"
+import {computed} from "vue";
+import {useSettingStore} from "@/store/modules/setting"
 const PermissionStore = userPermissionStore()
 
 const route = useRoute()
 
 // 获取路由
 const permission_routes = computed(() => PermissionStore.permission_routes)
-import {computed} from "vue";
-import {useSettingStore} from "@/store/modules/setting"
 const SettingStore = useSettingStore()
 
 const activeMenu = computed(() => {

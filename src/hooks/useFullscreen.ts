@@ -18,16 +18,16 @@ export const useFullscreen = () => {
         if (document.fullscreenEnabled) {
             fullscreenEnabled = document.fullscreenEnabled;
         // webkit
-        } else if (document.webkitFullscreenEnabled) {
-            fullscreenEnabled = document.webkitFullscreenEnabled;
+        } else if (document['webkitFullscreenEnabled']) {
+            fullscreenEnabled = document['webkitFullscreenEnabled'];
             prefixName = "webkit";
         // moz
-        } else if (document.mozFullScreenEnabled) {
-            fullscreenEnabled = document.mozFullScreenEnabled;
+        } else if (document['mozFullScreenEnabled']) {
+            fullscreenEnabled = document['mozFullScreenEnabled'];
             prefixName = "moz";
         // ms
-        } else if (document.msFullscreenEnabled) {
-            fullscreenEnabled = document.msFullscreenEnabled;
+        } else if (document['msFullscreenEnabled']) {
+            fullscreenEnabled = document['msFullscreenEnabled'];
             prefixName = "ms";
         }
         return {
@@ -44,9 +44,9 @@ export const useFullscreen = () => {
     const isElementFullScreen = ()=> {
         const fullscreenElement =
             document.fullscreenElement ||
-            document.msFullscreenElement ||
-            document.mozFullScreenElement ||
-            document.webkitFullscreenElement;
+            document['msFullscreenElement'] ||
+            document['mozFullScreenElement'] ||
+            document['webkitFullscreenElement'];
         if (fullscreenElement === null) {
             return false; // 当前没有元素在全屏状态
         } else {

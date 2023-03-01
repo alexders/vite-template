@@ -2,7 +2,7 @@
   <el-dropdown >
         <span class="el-dropdown-link">
           <el-avatar :size="30" class="avatar" :src="AvatarLogo"/>
-          {{userInfo.username}}
+          {{userInfo[`username`]}}
           <el-icon class="header-icon el-icon--right">
             <arrow-down />
           </el-icon>
@@ -65,7 +65,7 @@ const switchRolesAction = (type:string)=>{
 }
 
 // 用户信息
-const userInfo = computed(() => UserStore.userInfo)
+const userInfo= computed(() =>  UserStore.userInfo)
 const person = ref()
 
 const logOut = async () => {

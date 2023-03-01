@@ -44,8 +44,8 @@
   const formSize = ref('')
   const ruleFormRef = ref<FormInstance>()
   const ruleForm = reactive({
-    name: UserStore.userInfo.username,
-    password: UserStore.userInfo.password,
+    name: UserStore.userInfo['username'],
+    password: UserStore.userInfo['password'],
     configPassword: '',
   })
   const rules = reactive({

@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import { isExternal } from '@/utils/validate.ts'
+import { isExternal } from '@/utils/validate'
 import AppLink from './Link.vue'
 import path from 'path-browserify'
 import { ref, computed } from 'vue'
