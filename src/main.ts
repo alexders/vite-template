@@ -6,10 +6,10 @@ import {registerElIcons} from "@/plugins/ElIcons"
 // 权限路由
 import './permission.ts'
 import 'virtual:svg-icons-register'
+import PageWrapLayout from '@/components/PageWrapLayout/index.vue'
 import SvgIcon from '@/components/SvgIcon/index.vue'// svg component
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import "@/styles/index.scss";
 // 引入暗黑模式 element-plus 2.2 内置暗黑模式
 import 'element-plus/theme-chalk/dark/css-vars.css'
 // 自定义暗黑模式
@@ -21,6 +21,7 @@ const app =createApp(App)
 registerElIcons(app)
 
 app.component('svg-icon',SvgIcon)
+app.component('PageWrapLayout',PageWrapLayout)
 app.use(router)
 app.use(pinia)
 app.use(ElementPlus)

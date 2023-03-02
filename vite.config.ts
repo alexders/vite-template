@@ -29,6 +29,14 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
          ext: '.gz',
        }),
   ],
+  // 加载css文件
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "./src/styles/index.scss" as *;`
+      }
+    }
+  },
   resolve:{
     // 别名
     alias:{

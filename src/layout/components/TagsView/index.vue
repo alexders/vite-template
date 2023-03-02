@@ -3,6 +3,7 @@
     <div class="tags-view">
       <el-tabs
           v-model="activeTabsValue"
+          closable
           type="card"
           @tab-click="tabClick"
           @tab-remove="removeTab"
@@ -110,6 +111,7 @@ function toLastView(activeTabPath) {
   TagsViewStore.addVisitedView(nextTab)
 }
 const tabClick = (tabItem: TabsPaneContext) => {
+
   let path = tabItem.props.name as string;
   router.push(path);
 };
@@ -158,10 +160,10 @@ const removeTab = async (activeTabPath: string) => {
       border: none;
       color: #cccccc;
     }
-    // .el-tabs__header .el-tabs__item.is-active {
-    //   // color: $primaryColor;
-    //   // border-bottom:2px solid $primaryColor;
-    // }
+    .el-tabs__header .el-tabs__item.is-active {
+      color: $primaryColor;
+      border-bottom:2px solid $primaryColor;
+    }
   }
 }
 </style>
