@@ -34,7 +34,7 @@ const props = defineProps({
   item: {
     type: Object,
     required: true,
-  },
+  }, 
   basePath: {
     type: String,
     default: '',

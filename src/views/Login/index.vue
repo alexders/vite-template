@@ -29,7 +29,6 @@ const handleClick=()=>{
 }
 </script>
 <style lang="scss" scoped>
-$dark_gray: #889aa4;
 .login-box {
   position: relative;
   width: 100%;

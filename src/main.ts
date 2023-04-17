@@ -20,7 +20,7 @@ import "@/assets/iconfont/iconfont.js";
 const app =createApp(App)
 registerElIcons(app)
 
-app.component('svg-icon',SvgIcon)
+app.component('svg-icon',SvgIcon)PageWrapLayout
 app.component('PageWrapLayout',PageWrapLayout)
 app.use(router)
 app.use(pinia)
